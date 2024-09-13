@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "my-project-blog",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -31,7 +31,7 @@
     "uuid": "d7bc7019-c738-46f6-82e0-b4fd2e33e6d4"
   },
   "engines": {
-    "node": ">=18.0.0 <=20.x.x",
+    "node": "16.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
