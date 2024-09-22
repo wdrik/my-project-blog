@@ -1,7 +1,21 @@
-module.exports = [
+module.exports = ({ env }) => [
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", 'https:'],
+          'img-src': ["'self'", 'data:', 'blob:', `https://${env('AWS_BUCKET')}.s3.amazonaws.com`],
+          'media-src': ["'self'", 'data:', 'blob:', `https://${env('AWS_BUCKET')}.s3.amazonaws.com`],
+          upgradeInsecureRequests: null,
+        },
+      },
+    },
+  },
+  // 'strapi::security',
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',
