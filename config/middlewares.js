@@ -8,8 +8,20 @@ module.exports = ({ env }) => [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', `https://${env('AWS_BUCKET')}.s3.amazonaws.com`],
-          'media-src': ["'self'", 'data:', 'blob:', `https://${env('AWS_BUCKET')}.s3.amazonaws.com`],
+          'img-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'market-assets.strapi.io',
+            'drik-site.s3.us-east-1.amazonaws.com',
+          ],
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'market-assets.strapi.io',
+            'drik-site.s3.us-east-1.amazonaws.com',
+          ],
           upgradeInsecureRequests: null,
         },
       },
