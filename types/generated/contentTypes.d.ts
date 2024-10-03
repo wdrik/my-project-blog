@@ -410,6 +410,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     available: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
+    post: Attribute.Relation<
+      'api::category.category',
+      'manyToOne',
+      'api::post.post'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -441,9 +446,9 @@ export interface ApiPostPost extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
-    category: Attribute.Relation<
+    categories: Attribute.Relation<
       'api::post.post',
-      'oneToOne',
+      'oneToMany',
       'api::category.category'
     >;
     image: Attribute.Media<'images'> & Attribute.Required;
@@ -455,6 +460,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::author.author'
     >;
     preview: Attribute.String & Attribute.Required;
+    metaDescription: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

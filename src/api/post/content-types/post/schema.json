@@ -17,10 +17,11 @@
       "required": true,
       "unique": true
     },
-    "category": {
+    "categories": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::category.category"
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "post"
     },
     "image": {
       "type": "media",
@@ -46,6 +47,11 @@
     },
     "preview": {
       "type": "string",
+      "required": true
+    },
+    "metaDescription": {
+      "type": "string",
+      "unique": true,
       "required": true
     }
   }
