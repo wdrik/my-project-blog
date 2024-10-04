@@ -459,8 +459,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       'oneToOne',
       'api::author.author'
     >;
-    preview: Attribute.String & Attribute.Required;
-    metaDescription: Attribute.String & Attribute.Required & Attribute.Unique;
+    description: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
