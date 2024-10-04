@@ -410,11 +410,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     available: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
-    post: Attribute.Relation<
-      'api::category.category',
-      'manyToOne',
-      'api::post.post'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

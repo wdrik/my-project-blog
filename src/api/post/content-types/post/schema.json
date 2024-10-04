@@ -20,8 +20,7 @@
     "categories": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "post"
+      "target": "api::category.category"
     },
     "image": {
       "type": "media",
