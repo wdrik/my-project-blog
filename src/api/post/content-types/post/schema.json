@@ -47,6 +47,10 @@
     "description": {
       "type": "string",
       "required": true
+    },
+    "generatedByIA": {
+      "type": "boolean",
+      "required": true
     }
   }
 }

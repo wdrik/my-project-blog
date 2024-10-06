@@ -455,6 +455,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::author.author'
     >;
     description: Attribute.String & Attribute.Required;
+    generatedByIA: Attribute.Boolean & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
