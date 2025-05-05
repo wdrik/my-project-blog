@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "raffle_participants",
+  "info": {
+    "singularName": "raffle-participant",
+    "pluralName": "raffle-participants",
+    "displayName": "Raffle Participant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nickname": {
+      "type": "string",
+      "required": true
+    },
+    "wallet": {
+      "type": "uid",
+      "required": true
+    },
+    "joinedAt": {
+      "type": "datetime"
+    },
+    "raffles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::raffle.raffle",
+      "mappedBy": "raffle_participants"
+    }
+  }
+}

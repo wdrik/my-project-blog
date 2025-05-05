@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "raffles",
+  "info": {
+    "singularName": "raffle",
+    "pluralName": "raffles",
+    "displayName": "Raffle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "prize": {
+      "type": "string",
+      "required": true
+    },
+    "imagePrize": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "winnerWallet": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "startDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "endDate": {
+      "type": "datetime"
+    },
+    "raffle_participants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::raffle-participant.raffle-participant",
+      "inversedBy": "raffles"
+    }
+  }
+}
