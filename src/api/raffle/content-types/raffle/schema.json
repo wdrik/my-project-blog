@@ -52,6 +52,11 @@
       "relation": "manyToMany",
       "target": "api::raffle-participant.raffle-participant",
       "inversedBy": "raffles"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

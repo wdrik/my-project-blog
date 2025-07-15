@@ -922,6 +922,7 @@ export interface ApiRaffleRaffle extends Schema.CollectionType {
       'manyToMany',
       'api::raffle-participant.raffle-participant'
     >;
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
