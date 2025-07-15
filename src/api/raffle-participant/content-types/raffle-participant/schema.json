@@ -28,6 +28,12 @@
       "relation": "manyToMany",
       "target": "api::raffle.raffle",
       "mappedBy": "raffle_participants"
+    },
+    "tickets": {
+      "type": "integer",
+      "required": true,
+      "default": 1,
+      "min": 1
     }
   }
 }
