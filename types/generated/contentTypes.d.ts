@@ -971,6 +971,7 @@ export interface ApiRaffleParticipantRaffleParticipant
         number
       > &
       Attribute.DefaultTo<1>;
+    pfpImageUrl: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
