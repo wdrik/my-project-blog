@@ -854,6 +854,36 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiNewsletterNewsletter extends Schema.CollectionType {
+  collectionName: 'newsletters';
+  info: {
+    singularName: 'newsletter';
+    pluralName: 'newsletters';
+    displayName: 'Newsletter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::newsletter.newsletter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::newsletter.newsletter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPostPost extends Schema.CollectionType {
   collectionName: 'posts';
   info: {
@@ -883,7 +913,7 @@ export interface ApiPostPost extends Schema.CollectionType {
     description: Attribute.String & Attribute.Required;
     generatedByIA: Attribute.Boolean & Attribute.Required;
     isHighlight: Attribute.Boolean & Attribute.DefaultTo<false>;
-    priority: Attribute.Integer & Attribute.Unique;
+    priority: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<999>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1012,6 +1042,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::post.post': ApiPostPost;
       'api::raffle.raffle': ApiRaffleRaffle;
       'api::raffle-participant.raffle-participant': ApiRaffleParticipantRaffleParticipant;

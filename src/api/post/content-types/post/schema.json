@@ -58,7 +58,9 @@
     },
     "priority": {
       "type": "integer",
-      "unique": true
+      "unique": false,
+      "default": 999,
+      "required": true
     }
   }
 }
