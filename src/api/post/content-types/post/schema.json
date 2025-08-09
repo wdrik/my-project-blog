@@ -51,6 +51,14 @@
     "generatedByIA": {
       "type": "boolean",
       "required": true
+    },
+    "isHighlight": {
+      "type": "boolean",
+      "default": false
+    },
+    "priority": {
+      "type": "integer",
+      "unique": true
     }
   }
 }

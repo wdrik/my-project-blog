@@ -882,6 +882,8 @@ export interface ApiPostPost extends Schema.CollectionType {
     >;
     description: Attribute.String & Attribute.Required;
     generatedByIA: Attribute.Boolean & Attribute.Required;
+    isHighlight: Attribute.Boolean & Attribute.DefaultTo<false>;
+    priority: Attribute.Integer & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
