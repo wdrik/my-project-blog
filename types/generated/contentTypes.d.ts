@@ -860,12 +860,16 @@ export interface ApiNewsletterNewsletter extends Schema.CollectionType {
     singularName: 'newsletter';
     pluralName: 'newsletters';
     displayName: 'Newsletter';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    site: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'techknow'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
